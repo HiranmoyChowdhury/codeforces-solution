@@ -1,0 +1,39 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    using namespace std;
+    int main(){
+        ll t, tc, mn=0;
+        cin>>t;
+        while(t--){
+            ll n, i, j, k, l;
+            scanf("%lld", &n);
+            ll arr[n+2];
+            for(i=0; i<n; i++){
+                scanf("%lld", &arr[i]);
+            }
+            ll x=-1, y=-1;
+            for(i=1; i<n; i++){
+                if(abs(arr[i]-arr[i-1])>1){
+                    x=i; y=i+1;
+                    break;
+                }
+            }
+            if(x<0) printf("NO\n");
+            else{
+                printf("YES\n ");
+                printf("%lld %lld\n", x, y);
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        return 0;
+    }
