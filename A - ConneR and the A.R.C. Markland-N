@@ -1,0 +1,50 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    #define mp            make_pair
+    using namespace std;
+    int main(){
+        ll t, n, s, k, i, j;
+        cin>>t;
+        while(t--){
+            scanf("%lld %lld %lld", &n, &s, &k);
+            ll a[k+1];
+            for(i=0; i<k; i++) scanf("%lld", &a[i]);
+            sort(a, a+k);
+            map<ll, ll> mp;
+            for(i=0; i<k; i++) mp[a[i]]=1;
+            ll keep=s, ans=0, cnt=0;
+            while(keep>0){
+                if(mp[keep]==0){
+                    cnt=1;
+                    ans=s-keep;
+                    break;
+                }
+                keep--;
+            }
+            keep=s;
+            ll ala=0;
+            while(keep<=n){
+                if(mp[keep]==0){
+                    if(cnt){
+                        ans=min(ans, keep-s);
+                    }
+                    else ans=keep-s;
+                    break;
+                }
+                keep++;
+            }
+            cout<<ans<<endl;
+        }
+        
+        
+        
+        
+        
+        
+        
+        return 0;
+    }
