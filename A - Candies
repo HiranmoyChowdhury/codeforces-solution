@@ -1,0 +1,59 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define eb            emplace_back
+    #define pb            push_back
+    #define mp            make_pair
+    using namespace std;
+    int main(){
+     
+     
+        ll t, tc;
+        cin>>t;
+        while(t--){
+            ll n, i, j, k=0;
+            cin>>n;
+     
+            ll ans, keep=0;
+            while(1){
+                keep+=pow(2,k);
+                if(n%keep==0 && k>=1){
+                    ans=n/keep;
+                    break;
+                }
+                k++;
+            }
+    cout<<ans<<endl;
+     
+     
+     
+     
+     
+     
+     
+        }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+        return 0;
+    }
