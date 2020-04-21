@@ -1,0 +1,22 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    #define mp            make_pair
+    using namespace std;
+    int main(){
+        ll n, i, j, k;
+        cin>>n;
+        double ans=0.0;
+        while(n){
+            if(n==0) break;
+            double keep=(1.00/n);
+            ans+=keep;
+    		//cout<<ans<<endl;
+            n--;
+        }
+        printf("%.5lf\n", ans);
+        return 0;
+    }
