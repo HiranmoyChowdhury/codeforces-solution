@@ -1,0 +1,33 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    using namespace std;
+    int main(){
+        ll t;
+        cin>>t;
+        while(t--){
+            ll n, i, j, k, m;
+            ll fst=0, scnd=0;
+            scanf("%lld %lld %lld", &n, &i, &j);
+            for(k=0; k<i; k++){
+                scanf("%lld", &m);
+                fst=max(fst, m);
+            }
+            for(k=0; k<j; k++){
+                scanf("%lld", &m);
+                scnd=max(scnd, m);
+            }
+            if(fst>scnd) puts("YES");
+            else puts("NO");
+        }
+        
+        
+        
+        
+        
+        
+        return 0;
+    }
