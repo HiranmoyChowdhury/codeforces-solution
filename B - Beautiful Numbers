@@ -1,0 +1,38 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    using namespace std;
+    int main(){
+        ll t, n, i, j, k, l;
+        cin>>t;
+        while(t--){
+    	    int n;
+    	    scanf("%d", &n) ;
+    	    vector<int> v(n)  ;
+    	    vector<int> pos(n+10) ;
+    	    for(i=0 ;i<n; i++ ){
+    	    	scanf("%d",&v[i]) ;
+    	    	pos[v[i]] = i ;
+    	   }
+    	   int lo, hi;
+    	   lo=hi=pos[1] ;
+    	    for(i=1; i<=n; i++){
+    	    	lo=min(lo, pos[i]);
+    	    	hi=max(hi,pos[i]) ;
+    	    	if(abs(hi-lo)<i){
+    		    	printf("1");
+    	    	}
+    		    else{
+    		    	printf("0") ;
+    		    }
+    		
+    	   }
+    	   cout<<endl;
+    	
+    	}
+     
+        return 0;
+    }
