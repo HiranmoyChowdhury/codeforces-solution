@@ -1,0 +1,49 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define eb            emplace_back
+    #define pb            push_back
+    #define mp            make_pair
+    using namespace std;
+    int main(){
+     
+     
+        ll t, tc;
+        cin>>t;
+        while(t--){
+            ll n, i, j, k;
+            cin>>n;
+            if(n%4!=0){
+                cout<<"NO"<<endl;
+                continue;
+            }
+     
+     
+            vector<ll> even, odd;
+     
+            for(i=2; i<=n; i+=2){
+                even.eb(i);
+                if(i<=(n/2)) odd.eb(i-1);
+                else odd.eb(i+1);
+            }
+            cout<<"YES"<<endl;
+            for(i=0; i<even.size(); i++) cout<<even[i]<<' ';
+            for(i=0; i<odd.size(); i++) cout<<odd[i]<<' ';
+            cout<<endl;
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+        }
+     
+        return 0;
+    }
