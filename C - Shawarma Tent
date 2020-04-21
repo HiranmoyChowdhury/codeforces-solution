@@ -1,0 +1,75 @@
+    #include<bits/stdc++.h>
+    #define bst           ios_base::sync_with_stdio(0);
+    #define bug(x)        cerr<<#x<<'='<<x<<endl;
+    #define lp(i,a,b)     for(int i=a; i<=b; i++)
+    #define ll            long long int
+    #define pb            emplace_back
+    using namespace std;
+    int main(){
+        ll n , sx, sy, i, j, k;
+        cin>>n>>sx>>sy;
+        ll up=0, down=0, l=0, r=0, ax[5], ay[5], a[5], cnt=0;
+        
+        for(i=0; i<n; i++){
+            ll x, y;
+            scanf("%lld %lld", &x, &y);
+            if(x>sx){
+                r++;
+            }
+            else if(x<sx) l++;
+            if(y>sy) up++;
+            else if(y<sy) down++;
+        }
+        if(up>=l && up>=r && up>=down){
+            if(sy<1000000000){
+                 cout<<up<<endl;
+            cout<<sx<<' '<<sy+1<<endl;
+            return 0;
+            }
+        }
+        else if(sy<1000000000){
+            a[cnt]=up;
+            ax[cnt]=sx; ay[cnt++]=sy+1;
+        }
+        if(l>=r && l>=down && l>=up){
+            if(sx>0){
+                cout<<l<<endl;
+                cout<<sx-1<<' '<<sy<<endl;
+                return 0;
+            }
+            
+        }
+        else if(sx>0){
+            a[cnt]=l;
+            ax[cnt]=sx-1; ay[cnt++]=sy;
+        }
+        if(down>=r && down>=l && down>=up){
+            if(sy>0){
+                cout<<down<<endl<<sx<<' '<<sy-1<<endl;
+                return 0;
+            }
+        }
+        else if(sy>0){
+            a[cnt]=down;
+            ax[cnt]=sx; ay[cnt++]=sy-1;
+        }
+        if(r>=down && r>=l && r>=up){
+            if(sx<1000000000){
+                cout<<r<<endl<<sx+1<<' '<<sy<<endl;
+                return 0;
+            }
+        }
+        else if(sx<1000000000){
+            a[cnt]=r;
+            ax[cnt]=sx+1; ay[cnt++]=sy;
+        }
+        ll ans=a[0], xi=ax[0], xy=ay[0];
+        for(i=1; i<cnt; i++){
+            if(a[i]>ans){
+                ans=a[i];
+                xi=ax[i]; xy=ay[i];
+            }
+        }
+        cout<<ans<<endl<<xi<<' '<<xy<<endl;
+        return 0;
+    }
